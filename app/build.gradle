@@ -1,0 +1,116 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "fr.lbc.test"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    //Core
+        //Android
+    def appCompat_version = "1.1.0"
+    def lifecycle_version = "2.2.0"
+
+    //Koltin
+    def coreKtx_version= "1.2.0"
+
+    //DI
+    def dagger_version = "2.26"
+
+    //Testing
+    def mockito_version = "1.10.19"
+    def kotlin_mockito_version = "2.2.0"
+        //Unit
+    def junit_version = "4.12"
+    def extjJunit_version = "1.1.1"
+    def arch_version = "2.1.0"
+        //UI
+    def espressoCore_version= "3.2.0"
+
+    //Presentation
+    def constraintLayout_version = "1.1.3"
+    def recyclerView_version = "1.1.0"
+
+    //Networking
+    def retrofit_version = "2.7.1"
+    def okHttp_version = "4.3.1"
+        //Pictures
+    def picasso_version = "2.71828"
+        //Asynchronous Libs
+    def rxJava_version = "2.2.17"
+    def rxAndroid_version = "2.1.1"
+
+    //Persistence
+        //DataBase
+    def room_version = "2.2.3"
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //Core
+        //Android
+    implementation "androidx.appcompat:appcompat:$appCompat_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+        //Koltin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.core:core-ktx:$coreKtx_version"
+        //DI
+
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+    //Testing
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$kotlin_mockito_version"
+        //Unit
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$extjJunit_version"
+    testImplementation "android.arch.core:core-testing:$arch_version"
+        //UI
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCore_version"
+
+    //Presentation
+    implementation "androidx.recyclerview:recyclerview:$recyclerView_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayout_version"
+
+    //Networking
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
+        //Pictures
+    implementation "com.squareup.picasso:picasso:$picasso_version"
+
+        //Asynchronous Libs
+    implementation "io.reactivex.rxjava2:rxjava:$rxJava_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid_version"
+
+
+    //Persistence
+        //DataBase
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+}

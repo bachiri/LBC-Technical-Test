@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/albumImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/dummy_image" />
+
+    <!--Can Have A better UI-->
+    <TextView
+        android:id="@+id/errorLabel"
+        style="@style/TextAppearance.AppCompat.Display3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="gone"
+        tools:text="Internal Error" />
+
+    <TextView
+        android:id="@+id/id"
+        style="@style/TextAppearance.AppCompat.Display1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="100" />
+
+    <TextView
+        android:id="@+id/albumId"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/albumTitle"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="reprehenderit est deserunt velit ipsam" />
+
+</LinearLayout>
